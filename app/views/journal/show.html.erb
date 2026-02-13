@@ -1,0 +1,16 @@
+<% content_for(:title, "#{@entry.title} - Pedro Moreira") %>
+<% content_for(:description, @entry.description) %>
+
+<article class="article">
+  <header class="article-header">
+    <time datetime="<%= @entry.date.iso8601 %>"><%= @entry.formatted_date %></time>
+    <h1><%= @entry.title %></h1>
+    <% if @entry.description.present? %>
+      <p class="article-description"><%= @entry.description %></p>
+    <% end %>
+  </header>
+
+  <div class="prose">
+    <%= @entry.body_html %>
+  </div>
+</article>

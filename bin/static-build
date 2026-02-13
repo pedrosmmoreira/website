@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+set -eu
+
+export RAILS_ENV=production
+export RAILS_LOG_LEVEL=warn
+export SECRET_KEY_BASE=dummy
+export SECRET_KEY_BASE_DUMMY=1
+
+# Generate production-optimised assets.
+bundle exec rails assets:precompile
+
+# Build with Parklife.
+bundle exec parklife build "$@"
+
+# Copy all public resources to ./build.
+if [ -d public ]; then
+  cp -R public/* build
+fi
+
+# Generate CNAME for GitHub Pages custom domain.
+echo "pedrosmmoreira.com" > build/CNAME
+
+# List all files in the build (useful for debugging).
+find build -type f | sort

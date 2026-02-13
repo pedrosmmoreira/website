@@ -1,0 +1,11 @@
+require_relative "config/environment"
+
+Parklife.application.configure do |config|
+  config.base = "https://pedrosmmoreira.com"
+  config.nested_index = false
+end
+
+Parklife.application.routes do
+  root crawl: true
+  get "/404.html"
+end

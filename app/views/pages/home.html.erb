@@ -1,0 +1,29 @@
+<% content_for(:title, "Pedro Moreira") %>
+<% content_for(:description, "Software developer, occasional writer.") %>
+<% content_for(:head) do %>
+  <%= render "shared/structured_data" %>
+<% end %>
+
+<section class="hero">
+  <div class="hero-bio">
+    <p>Currently building things at <a href="https://char.gy">char.gy</a>.</p>
+    <p>Previously at <a href="https://specle.io">Specle</a> and <a href="https://unboxed.co">Unboxed</a>.</p>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section class="journal-listing">
+  <div class="journal-grid">
+    <% last_year = nil %>
+    <% @entries.each do |entry| %>
+      <% year = entry.date.year %>
+      <% year_start = year != last_year %>
+      <a href="<%= journal_entry_path(slug: entry.slug) %>" class="journal-grid-row<%= ' journal-grid-year-start' if year_start %>">
+        <span class="journal-grid-year"><%= year if year_start %></span>
+        <span class="journal-grid-title"><%= entry.title %></span>
+      </a>
+      <% last_year = year %>
+    <% end %>
+  </div>
+</section>

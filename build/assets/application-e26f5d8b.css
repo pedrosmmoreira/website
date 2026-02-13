@@ -1,0 +1,436 @@
+/* ===========================
+   Custom Properties
+   =========================== */
+
+:root {
+  /* Typography */
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-sans: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* Colors */
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b6b6b;
+  --color-bg: #f8f7f5;
+  --color-surface: #ffffff;
+  --color-border: #e5e5e5;
+  --color-accent: #c9a96e;
+  --color-code-bg: #f5f5f0;
+
+  /* Layout */
+  --max-width: 960px;
+  --prose-width: 720px;
+  --padding-x: 1.5rem;
+  --padding-y: 4rem;
+}
+
+/* ===========================
+   Reset & Base
+   =========================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-serif);
+  font-size: 106.25%; /* 17px base */
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--padding-y) var(--padding-x);
+}
+
+/* ===========================
+   Typography
+   =========================== */
+
+h1, h2, h3 {
+  font-family: var(--font-sans);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration-color: var(--color-border);
+  text-underline-offset: 0.15em;
+  transition: text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+/* ===========================
+   Header & Navigation
+   =========================== */
+
+header {
+  margin-bottom: 4rem;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+header nav a:hover {
+  color: var(--color-text);
+}
+
+header nav a.site-name {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+}
+
+/* ===========================
+   Main Content
+   =========================== */
+
+main {
+  min-height: 60vh;
+}
+
+/* ===========================
+   Hero Section
+   =========================== */
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.hero-bio {
+  max-width: 40%;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.hero-bio a {
+  text-decoration-color: var(--color-accent);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 3rem 0;
+}
+
+/* ===========================
+   Journal Grid
+   =========================== */
+
+.journal-grid {
+  display: grid;
+  grid-template-columns: 5rem 1fr auto auto;
+}
+
+.journal-grid-row {
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
+  align-items: baseline;
+  padding: 0.65rem 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background-color 0.15s ease;
+}
+
+.journal-grid-row:hover {
+  background-color: var(--color-code-bg);
+}
+
+.journal-grid-year-start {
+  padding-top: 1.25rem;
+}
+
+.journal-grid-year {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.journal-grid-title {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.journal-grid-tag {
+  text-align: right;
+  padding: 0 0.75rem;
+}
+
+.tag-badge {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  background: var(--color-code-bg);
+  padding: 0.15em 0.55em;
+  border-radius: 9999px;
+}
+
+.journal-grid-arrow {
+  color: var(--color-text-muted);
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   Article Page
+   =========================== */
+
+.article {
+  max-width: var(--prose-width);
+}
+
+.article-header {
+  margin-bottom: 3rem;
+}
+
+.article-header time {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.article-header h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.article-description {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.article-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Prose styling for article body */
+.prose {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.prose h2 {
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose h3 {
+  font-size: 1.15rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+}
+
+.prose a {
+  text-decoration-color: var(--color-accent);
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.35rem;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 2.5rem 0;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.prose th,
+.prose td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.prose th {
+  font-weight: 600;
+}
+
+/* ===========================
+   Code
+   =========================== */
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+:not(pre) > code {
+  background: var(--color-code-bg);
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+}
+
+pre.highlight {
+  background: var(--color-code-bg);
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+
+footer {
+  margin-top: 5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+footer p {
+  display: flex;
+  gap: 1.25rem;
+}
+
+footer a {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--color-text);
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+
+@media (max-width: 600px) {
+  :root {
+    --padding-x: 1rem;
+    --padding-y: 2rem;
+  }
+
+  header {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-bio {
+    max-width: 100%;
+  }
+
+  .journal-grid {
+    grid-template-columns: 1fr auto;
+  }
+
+  .journal-grid-year,
+  .journal-grid-tag {
+    display: none;
+  }
+
+  .article-header h1 {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    margin-top: 3rem;
+  }
+}
