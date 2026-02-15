@@ -197,7 +197,7 @@ main {
 
 .hero-bio {
   font-family: var(--font-serif);
-  max-width: 50%;
+  max-width: 70%;
   color: var(--color-text-muted);
   line-height: 1.75;
 }
