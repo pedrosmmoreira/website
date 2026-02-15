@@ -11,32 +11,11 @@
     <%= javascript_importmap_tags %>
     <%= yield :head %>
   </head>
-
   <body>
-    <header>
-      <nav>
-        <div class="site-identity">
-          <%= link_to "Pedro Moreira", root_path, class: "site-name" %>
-          <span class="site-tagline">Software developer, occasional writer.</span>
-        </div>
-        <div class="site-nav">
-          <a href="/now">Now</a>
-          <a href="/projects">Projects</a>
-          <a href="/about">About</a>
-        </div>
-      </nav>
-    </header>
-
+    <%= render "application/header" %>
     <main>
       <%= yield %>
     </main>
-
-    <footer>
-      <p>
-        <a href="https://github.com/pedrosmmoreira">GitHub</a>
-        <a href="https://twitter.com/pedrosmmoreira">Twitter</a>
-        <a href="mailto:hello@pedrosmmoreira.com">Email</a>
-      </p>
-    </footer>
+    <%= render "application/footer" %>
   </body>
 </html>
