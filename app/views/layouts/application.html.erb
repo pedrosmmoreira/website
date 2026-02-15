@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title><%= content_for(:title) || "Pedro Moreira" %></title>
     <meta name="description" content="<%= content_for(:description) || "Software developer, occasional writer." %>">
+    <meta property="og:title" content="<%= content_for(:title) || "Pedro Moreira" %>">
+    <meta property="og:description" content="<%= content_for(:description) || "Software developer, occasional writer." %>">
+    <meta property="og:url" content="<%= OpenGraph.canonical_url(request) %>">
+    <meta property="og:image" content="<%= content_for(:og_image).presence || OpenGraph.default_og_image_url %>">
+    <meta property="og:type" content="<%= content_for(:og_type).presence || "website" %>">
+    <meta property="og:site_name" content="Pedro Moreira">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="<%= content_for(:title) || "Pedro Moreira" %>">
+    <meta name="twitter:description" content="<%= content_for(:description) || "Software developer, occasional writer." %>">
+    <meta name="twitter:image" content="<%= content_for(:og_image).presence || OpenGraph.default_og_image_url %>">
+    <link rel="canonical" href="<%= OpenGraph.canonical_url(request) %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag :app %>
