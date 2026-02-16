@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hello Again: What I&#39;ve Been Building (and What I&#39;m Building Next) - Pedro Moreira</title>
+    <meta name="description" content="A year-end reflection on 2020.">
+    <meta property="og:title" content="Hello Again: What I&#39;ve Been Building (and What I&#39;m Building Next) - Pedro Moreira">
+    <meta property="og:description" content="A year-end reflection on 2020.">
+    <meta property="og:url" content="https://pedrosmmoreira.com/journal/hello-again">
+    <meta property="og:image" content="https://pedrosmmoreira.com/icon.png">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Pedro Moreira">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hello Again: What I&#39;ve Been Building (and What I&#39;m Building Next) - Pedro Moreira">
+    <meta name="twitter:description" content="A year-end reflection on 2020.">
+    <meta name="twitter:image" content="https://pedrosmmoreira.com/icon.png">
+    <link rel="canonical" href="https://pedrosmmoreira.com/journal/hello-again">
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="AKe3jMpAMdg8fIXr1pexFvXwVYlppeMGASgXJeyBlwMt62PIUriqIX314aTXUI-jFrasEMCpZRuKqJO3CfYs-A" />
+    
+    <link rel="stylesheet" href="/assets/application-1468eb68.css" />
+    <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-d8a8613a.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-d8a8613a.js">
+<script type="module">import "application"</script>
+    <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Pedro Moreira",
+  "url": "https://pedrosmmoreira.com",
+  "description": "Engineering leader building reliable systems and growing reliable teams. 11 years across fintech, cleantech, and government digital services.",
+  "knowsAbout": [
+    "Engineering Leadership",
+    "Backend Engineering",
+    "Software Reliability",
+    "Engineering Management",
+    "Open Source Software",
+    "Fintech",
+    "Cleantech"
+  ],
+  "sameAs": [
+    "https://github.com/pedrosmmoreira",
+    "https://x.com/pedrosmmoreira",
+    "https://www.linkedin.com/in/pedrosmmoreira"
+  ],
+  "alumniOf": [
+    {
+      "@type": "Organization",
+      "name": "Ventrata",
+      "url": "https://ventrata.com"
+    },
+    {
+      "@type": "Organization",
+      "name": "char.gy",
+      "url": "https://char.gy"
+    },
+    {
+      "@type": "Organization",
+      "name": "Specle",
+      "url": "https://specle.net"
+    },
+    {
+      "@type": "Organization",
+      "name": "Unboxed Consulting",
+      "url": "https://unboxed.co"
+    }
+  ],
+  "nationality": {
+    "@type": "Country",
+    "name": "Portugal"
+  },
+  "homeLocation": {
+    "@type": "Place",
+    "name": "Porto, Portugal"
+  }
+}
+</script>
+
+    
+  </head>
+  <body>
+    <header>
+  <nav>
+    <div class="site-identity">
+      <a class="site-name" href="/">Pedro Moreira</a>
+      <span class="site-tagline">Building reliable systems &amp; growing reliable teams</span>
+    </div>
+  </nav>
+</header>
+
+    <main>
+      
+<article class="article">
+  <header class="article-header">
+    <time datetime="2026-02-16">February 16, 2026</time>
+    <h1>Hello Again: What I&#39;ve Been Building (and What I&#39;m Building Next)</h1>
+      <p class="article-description">A year-end reflection on 2020.</p>
+  </header>
+
+  <div class="prose">
+    <p>The last time I wrote here, it was December 2020. I was wrapping up a year that had felt like time had &quot;acquired a certain elasticity&quot; — grinding and fast simultaneously. I ended that post saying I wasn&#39;t making any grand plans. I&#39;d write when I felt like it. Stream when I felt like it. Not rush anything.</p>
+
+<p>That was five years ago. So much for not rushing — turns out I was just busy.</p>
+
+<p>What follows is an attempt to catch up. Not an apology for the silence (I was doing the work, not writing about it), but an account of what the work has been — and where it&#39;s heading.</p>
+
+<hr>
+
+<h2>char.gy — Making Things Work</h2>
+
+<p>In mid-2020, I joined char.gy as a Senior Developer. If you&#39;re not familiar with them, char.gy operates the UK&#39;s largest on-street EV charging network — the kind where you charge your car from a converted lamp post. When I started, my daughter was so excited about it that she told her teacher I was &quot;saving the planet and helping the future be better.&quot; Her teacher was sceptical. Fair enough.</p>
+
+<p>The reality was less glamorous and more interesting. Hundreds of charge points scattered across the UK, each one a small computer bolted to a lamp post, each one capable of failing in ways you wouldn&#39;t believe until you&#39;ve seen the logs. When I arrived, the charging success rate sat at 85%. That sounds decent until you realise it means roughly one in six people who walked up to a charger, plugged in their car, and expected it to work... it didn&#39;t.</p>
+
+<p>Over the next four years, we took that number from 85% to 94%. We cut support tickets by 70%. We maintained 99%+ network availability. I owned the Rails monolith that served as the backbone for multiple product teams, built real-time interfaces with Turbo and Hotwire, and spent a lot of time staring at monitoring dashboards learning what reliability actually means when people depend on your system to get home.</p>
+
+<p>The char.gy years taught me something I keep coming back to: reliability isn&#39;t a feature you ship. It&#39;s a culture you build. It lives in the tests you write, the alerts you configure, the on-call rotations you respect, and the conversations you have when something breaks at 2am. I&#39;ll write about this properly — the technical story deserves its own post.</p>
+
+<h2>Ventrata — Growing Teams</h2>
+
+<p>After char.gy, I joined Ventrata as Tech Lead. Ventrata builds the booking and ticketing platform behind some of the world&#39;s best-known attractions — a different kind of reliability problem, where &quot;it doesn&#39;t work&quot; means thousands of visitors standing in a queue that isn&#39;t moving.</p>
+
+<p>This is where the work shifted for me. Not entirely away from systems — I still owned the platform, still cared deeply about how the code was structured and tested — but increasingly toward people. Introducing quality practices to a team that hadn&#39;t used them. Having difficult conversations about why we write tests before we write code. Learning that the hardest part of technical leadership isn&#39;t knowing the right answer — it&#39;s creating the conditions where the team finds it themselves.</p>
+
+<p>Ventrata was the chapter where I started to understand that building reliable systems and growing reliable teams are not two different things. They&#39;re the same thing, viewed from different altitudes.</p>
+
+<h2>Specle — The CTO Years (In Retrospect)</h2>
+
+<p>I&#39;ve written about leaving Specle before — in that 2020 post, from the raw middle of it. Five years as CTO of a proptech startup, fighting for growth and survival. At the time, I was too close to see what it had given me. With distance, I can.</p>
+
+<p>Specle taught me what it means to own everything. Not just the code, but the product decisions, the hiring, the board conversations, the moment when the money is running out and the next feature needs to ship anyway. It taught me that leadership isn&#39;t a title — it&#39;s what you do when nobody else is going to do it.</p>
+
+<p>I served as CTO and Board Observer, and that combination — building the technology while sitting in the room where the business decisions happen — shaped how I think about engineering leadership more than anything before or since.</p>
+
+<h2>The Thread Running Through It</h2>
+
+<p>If I look at the path from Unboxed (Gov.uk, Ministry of Justice) through Specle, char.gy, and Ventrata, there&#39;s a thread I didn&#39;t plan but can&#39;t ignore: I keep ending up in places where things need to work. Government services that citizens depend on. Charging infrastructure that people need to get home. Booking systems that can&#39;t go down when 10,000 visitors are waiting.</p>
+
+<p>I didn&#39;t choose reliability as an identity. It chose me. And somewhere along the way, the work expanded from making systems reliable to making the teams behind them reliable too.</p>
+
+<p>Building reliable systems &amp; growing reliable teams. That&#39;s the line I keep coming back to. Love the problem, not the tech stack.</p>
+
+<h2>What&#39;s Next — Cleo AI</h2>
+
+<p>In March 2026, I&#39;m joining Cleo AI as Tech Lead Manager. It&#39;s my first formal people management role, and I&#39;m choosing to be honest about that rather than pretend it isn&#39;t a big deal.</p>
+
+<p>Cleo is an AI-native financial wellbeing app — a profitable fintech unicorn with a product trio model (Engineering Manager + Product Manager + Designer) that I&#39;ve admired from the outside. The engineering challenges are different from anything I&#39;ve worked on: AI/ML pipelines, React Native, Python alongside the backend work I know well. The leadership challenge is the one I&#39;ve been building toward: owning both the technical direction and the growth of the people doing the work.</p>
+
+<p>I&#39;m nervous. I&#39;m excited. I think that&#39;s the right combination.</p>
+
+<h2>Why I&#39;m Writing Again</h2>
+
+<p>I&#39;m not going to promise a schedule. You can scroll down this page and see what happened the last time I tried weeknotes — four entries and then silence. I know myself well enough now to not make commitments I can&#39;t keep.</p>
+
+<p>What I will say is this: the work has gotten interesting enough to write about, and I&#39;ve come to believe that writing about it is part of doing it well. The best engineering leaders I admire — the ones whose thinking I return to — are the ones who write. Not because writing makes you a better leader directly, but because the act of articulating what you&#39;ve learned forces you to understand it properly.</p>
+
+<p>I&#39;ll be writing about engineering leadership, reliability, and software craft. Some of it will be technical. Some of it will be personal. Most of it, I hope, will be useful to someone other than me.</p>
+
+<p>I&#39;m not trying to become an influencer. I&#39;m trying to think in public, learn in public, and leave a trail that might help someone on a similar path.</p>
+
+<hr>
+
+<p>My daughter is twelve now. She no longer thinks I&#39;m saving the planet — she&#39;s moved on to more pressing concerns, most of them involving her phone. But I still think about what she said to that teacher. The best version of this work — the version worth writing about — is the one where we&#39;re building things that make the future a little better.</p>
+
+<p>Let&#39;s see what happens.</p>
+
+  </div>
+</article>
+
+    </main>
+    <footer>
+  <p>
+    <a href="https://github.com/pedrosmmoreira">GitHub</a>
+    <a href="https://x.com/pedrosmmoreira">X</a>
+    <a href="https://www.linkedin.com/in/pedrosmmoreira">LinkedIn</a>
+  </p>
+</footer>
+
+  </body>
+</html>
