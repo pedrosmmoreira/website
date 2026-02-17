@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   get "journal", to: redirect("/", status: 301), as: :journal
   get "journal/:slug", to: "journal#show", as: :journal_entry
 
+  get "sitemap.xml", to: "pages#sitemap", defaults: { format: :xml }, as: :sitemap
+
   get "404", to: "errors#not_found"
 end
