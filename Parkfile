@@ -8,4 +8,5 @@ end
 Parklife.application.routes do
   root crawl: true
   get "/404.html"
+  get "/sitemap.xml"
 end

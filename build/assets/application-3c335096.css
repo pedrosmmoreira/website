@@ -293,12 +293,14 @@ main {
 }
 
 .prose h2 {
+  font-family: var(--font-sans);
   font-size: 1.5rem;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
 }
 
 .prose h3 {
+  font-family: var(--font-sans);
   font-size: 1.2rem;
   margin-top: 2rem;
   margin-bottom: 0.5rem;

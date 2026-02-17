@@ -11,4 +11,11 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def sitemap
+    @entries = JournalEntry.all
+    respond_to do |format|
+      format.xml
+    end
+  end
 end
